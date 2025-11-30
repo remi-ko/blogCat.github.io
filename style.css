@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    background-color: #efefef;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 2rem 1rem 4rem;
+    margin-bottom: 2rem;
+    transition: backgound-image 10s ease;
+}
+h1 {
+    font-size: 4rem;
+    text-align: center;
+}
+
+header:hover{
+    background-image: url(img/Slakkj.jpeg);
+    background-size: 100% 100%;
+    color: transparent; 
+}
+
+h4 {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+img {
+    width: 400px;
+    height: 400px;
+}
+
+section {
+    transition: box-shadow 0.3s cubic-bezier(0.47, 0, 0.75, 0.72);
+    transition: transform 0.4s cubic-bezier(0.11, 0.28, 0.58, 1);
+    width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 4px 3px 4px 3px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+section h2,
+section p {
+    margin: 1rem;
+    padding: 0 0 0 4px;
+}
+
+section:hover {
+    box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.375);
+    transform: translate(10px, -10px);
+
+}
+
+video {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.vidcat {
+    width: 200px;
+    height: 267px;
+    margin-left: 2rem;
+    display: inline-block;
+    position: fixed;
+    position-area: right;
+}
+
+footer {
+    background-color: #2f3a43;
+    margin-top: 10px;
+    padding: 2rem;
+    color: white;
+}
+
+
+#izquierda {
+    float: right;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a { 
+    transition: color 0.3s ease;
+    color: white;
+    text-decoration: none;
+}
+
+
+footer a:hover {
+    color: cornflowerblue;
+}
+
+
+/* Cursor Highlight Styles */
+.cursor-highlight {
+    position: relative;
+    overflow: hidden;
+    /* Ensure the element has a background so the glow is visible against it or behind text */
+}
+
+.cursor-highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        800px circle at var(--x, 50%) var(--y, 50%),
+        rgba(255, 255, 255, 0.15),
+        transparent 40%
+    );
+    pointer-events: none; /* Let clicks pass through */
+    z-index: 1; /* Above background, below text if text is z-indexed higher */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.cursor-highlight:hover::before {
+    opacity: 1;
+}
+
+/* Ensure text stays on top */
+.cursor-highlight > * {
+    position: relative;
+    z-index: 2;
+}
