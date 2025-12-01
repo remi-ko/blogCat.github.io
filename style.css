@@ -118,38 +118,4 @@ footer a:hover {
     color: cornflowerblue;
 }
 
-
-/* Cursor Highlight Styles */
-.cursor-highlight {
-    position: relative;
-    overflow: hidden;
-    /* Ensure the element has a background so the glow is visible against it or behind text */
-}
-
-.cursor-highlight::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(
-        800px circle at var(--x, 50%) var(--y, 50%),
-        rgba(255, 255, 255, 0.15),
-        transparent 40%
-    );
-    pointer-events: none; /* Let clicks pass through */
-    z-index: 1; /* Above background, below text if text is z-indexed higher */
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.cursor-highlight:hover::before {
-    opacity: 1;
-}
-
-/* Ensure text stays on top */
-.cursor-highlight > * {
-    position: relative;
-    z-index: 2;
-}
+*/
