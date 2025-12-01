@@ -5,7 +5,7 @@ Este proyecto es creado para prácticar principalmente HTML y CSS (de momento). 
 - Las raíces están creadas para diseñar diferentes estilos y animaciones como colores y más del mismo blog.
 
 Cosas por aplicar:
-1. Gestionar los elementos en HTML.
+1. Gestionar los elementos en HTML, para generar una buena distribución de estas.
 2. Aplicar animaciones que le den perdonalidad única a la página.
 3. Agregar contenido y actualizar lo que ya están.
 4. Aplicar JavaScript (ver cómo aplicarlo en la página).
