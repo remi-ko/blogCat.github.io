@@ -1,65 +1,61 @@
+/* -------------------- FUENTES -------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Headland+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bigshot+One&display=swap');
 
-
 body {
     margin: 0;
-    font-size: 16px; 
-    line-height: 1.5;
+    font-size: 16px;
 }
 
-/*Encabezado reponsivo*/
-#info-inicial h1{
+/* -------------------- ENCABEZADO -------------------- */
+#info-inicial h1 {
     font-family: "Headland One", serif;
     font-weight: 400;
-
-    /* Se adapta entre móvil y pantallas grandes*/
     font-size: clamp(2.2rem, 5vw, 4rem);
-
     color: white;
     margin: 0;
 }
 
-#info-inicial p{
+#info-inicial p {
     font-family: "Bigshot One", serif;
     color: whitesmoke;
     margin: 0.3rem 0;
     font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
-#info-inicial img{
+#info-inicial img {
     border-radius: 30%;
-    width: 40%;     
-    height: auto;     
+    width: 40%;
+    height: auto;
     display: block;
 }
 
-#info-inicial{
+#info-inicial {
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: fadeIn 1s ease-in-out;
 }
-/* Encabezado general */
-#encabezado{
+
+#encabezado {
     padding: clamp(1.5rem, 2.5vw, 3rem);
     margin-bottom: 2px;
     background-color: black;
-
-    /* Curva inferior responsiva */
     border-radius: 0 0 clamp(4rem, 20vw, 20rem) clamp(4rem, 20vw, 20rem);
 }
 
-/*Animación cat*/
-#sec-decorativo{
+/* -------------------- ANIMACIÓN GATOS -------------------- */
+
+#sec-decorativo {
     width: 100%;
-    overflow: hidden; /* CLAVE: evita que se agrande la página */
+    overflow: hidden;
 }
 
 #animation-cat {
     display: flex;
-    animation: loop 15s linear infinite;
-    width: max-content; /* se adapta al contenido */
-    will-change: transform; /* mejora rendimiento */
+    animation: loop 12s linear infinite;
+    width: max-content;
+    will-change: transform;
 }
 
 #animation-cat img {
@@ -70,114 +66,171 @@ body {
 }
 
 @keyframes loop {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    /* Con 8 imágenes de 15rem + 2rem de margin = 17rem cada una */
-        /* Mueve exactamente 4 imágenes (la mitad) para loop perfecto */
-    transform: translateX(calc(-17rem * 4));
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-10rem * 4)); }
 }
 
-/*Cards*/
+/* -------------------- MAIN -------------------- */
+
 main {
-    max-width: 900px; /* Centrado elegante */
+    width: min(1200px, 100%);
     margin: 0 auto;
-    padding-bottom: 2rem;
+    padding: 1.5rem;
     display: flex;
-    flex-wrap: nowrap;
     flex-direction: column;
-    align-items: stretch;
+    gap: 2.5rem;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-.card-basico{
-    width: 10rem;
+/* ---------- CARDS ---------- */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
 }
 
-.cards{
+.card {
+    background-color: brown;
+    height: 430px;
+    overflow: hidden;
+    border-radius: 1rem;
+    width: clamp(260px, 30%, 360px);
+    padding: 1rem;
+    box-sizing: border-box;
+
+    /* Animación sutil */
+    transform: translateY(0);
+    transition: transform .3s ease, box-shadow .3s ease;
+    transition: height .5s ease;
+    interpolate-size: allow-keywords;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    height: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.card img {
+    width: 100%;
+    height: 18rem;
+    object-fit: cover;
+    border-radius: 0.6rem;
+}
+
+/* ---------- INFO-CARD (SECCIÓN ARREGLADA) ---------- */
+
+.info-card {
+    background-color: aquamarine;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+
+    width: min(900px, 100%);
+    margin: 0 auto;
+
     display: flex;
     flex-direction: row;
-    align-items: stretch;
-    margin-bottom: 3rem;
+    align-items: flex-start;
+    gap: 1.5rem;
 }
 
-.card{
-    border-radius: 1rem;
-    background-color: brown;
-    margin: 6px;
-    width: 18rem;
-    
-    
-    
+.info-card img {
+    width: 40%;
+    min-width: 180px;
+    max-width: 280px;
+    border-radius: 0.6rem;
+    object-fit: cover;
 }
 
-
-.info-card{
-    border-radius: 2rem;
-    background-color: aquamarine;
-    grid-column: span 3 / span 3;
-    grid-row: span 4 / span 4;
-    grid-row-start: 6;
+.info-card div {
+    flex: 1;
 }
 
-/*
-.card-principal,
-.card-secundaria {
-    padding: 1.2rem;
-    border-radius: 1rem;
-    
+/* ---------- RESPONSIVE INFO-CARD ---------- */
+
+@media (max-width: 768px) {
+    .info-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-card img {
+        width: 80%;
+        margin: 0 auto;
+    }
 }
 
- Titulares de las cards 
-.card-principal h2,
-.card-secundaria h2 {
-    font-size: clamp(1.4rem, 2.5vw, 2rem);
-    margin-top: 0;
+@media (max-width: 480px) {
+    .info-card {
+        padding: 1rem;
+        border-radius: 1rem;
+    }
 }
 
- Texto dentro de cards 
-.card-principal p,
-.card-secundaria p {
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
-}
+/* ---------- SECCIÓN EXTRA ---------- */
 
- Cards secundarias: estilo flex para mejor adaptación 
-.card-secundaria {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-*/
-
-/* ------------------------------
-   SECCIÓN DECORATIVA
---------------------------------*/
 #sec-decoration {
     margin-top: 1.5rem;
     padding: 1.5rem;
     border-radius: 1rem;
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    background-color: #8954fa;
+
+    animation: floatCard 3s ease-in-out infinite alternate;
 }
 
-/* ------------------------------
-   FOOTER RESPONSIVO
---------------------------------*/
-#final-pag{
+/* -------------------- FOOTER -------------------- */
+
+#final-pag {
     background-color: rgb(255, 81, 0);
     margin-top: 2rem;
     text-align: center;
+    padding-top: clamp(1rem, 1.5vw, 2rem);
     font-size: clamp(0.9rem, 1.3vw, 1.2rem);
-    border-radius: clamp(4rem, 20vw, 20rem) clamp(4rem, 20vw, 20rem) 0 0 ;
+    border-radius: clamp(4rem, 20vw, 20rem) clamp(4rem, 20vw, 20rem) 0 0;
+    animation: fadeIn 1.3s ease;
 }
 
-#footer-contenido{
+#footer-contenido {
     padding: 1.2rem 10px 0.5rem 10px;
-    align-items: left;
 }
 
 #final-pag a {
     font-size: clamp(1rem, 1.5vw, 1.3rem);
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
 
+#final-pag a:hover {
+    text-decoration: underline;
+}
 
+/* -------------------- ANIMACIONES -------------------- */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatCard {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+/* -------------------- RESPONSIVE GENERAL -------------------- */
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+
+    .card img {
+        height: 12rem;
+    }
+}
