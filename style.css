@@ -96,18 +96,25 @@ main {
 }
 
 .cards{
-    
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin-bottom: 3rem;
 }
 
 .card{
+    border-radius: 1rem;
     background-color: brown;
-    margin: 5px;
+    margin: 6px;
+    width: 18rem;
+    
     
     
 }
 
 
 .info-card{
+    border-radius: 2rem;
     background-color: aquamarine;
     grid-column: span 3 / span 3;
     grid-row: span 4 / span 4;
@@ -158,10 +165,15 @@ main {
 --------------------------------*/
 #final-pag{
     background-color: rgb(255, 81, 0);
-    padding: 1.2rem;
+    margin-top: 2rem;
     text-align: center;
     font-size: clamp(0.9rem, 1.3vw, 1.2rem);
-    border-radius: 0 0 clamp(4rem, 20vw, 20rem) clamp(4rem, 20vw, 20rem);
+    border-radius: clamp(4rem, 20vw, 20rem) clamp(4rem, 20vw, 20rem) 0 0 ;
+}
+
+#footer-contenido{
+    padding: 1.2rem 10px 0.5rem 10px;
+    align-items: left;
 }
 
 #final-pag a {
