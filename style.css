@@ -56,7 +56,7 @@ body {
 }
 
 #animation-cat {
-     display: flex;
+    display: flex;
     animation: loop 15s linear infinite;
     width: max-content; /* se adapta al contenido */
     will-change: transform; /* mejora rendimiento */
@@ -86,9 +86,9 @@ main {
     margin: 0 auto;
     padding-bottom: 2rem;
     display: flex;
-    flex-direction: column;
     flex-wrap: nowrap;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .card-basico{
@@ -96,22 +96,25 @@ main {
 }
 
 .cards{
-    display: flex;
-    gap: 39px;
-    justify-content: space-evenly;
+    
 }
 
 .card{
-     grid-row: span 4 / span 4;
+    background-color: brown;
+    margin: 5px;
+    
+    
 }
 
 
-.card-4{
-     grid-column: span 3 / span 3;
+.info-card{
+    background-color: aquamarine;
+    grid-column: span 3 / span 3;
     grid-row: span 4 / span 4;
     grid-row-start: 6;
 }
 
+/*
 .card-principal,
 .card-secundaria {
     padding: 1.2rem;
@@ -119,25 +122,26 @@ main {
     
 }
 
-/* Titulares de las cards */
+ Titulares de las cards 
 .card-principal h2,
 .card-secundaria h2 {
     font-size: clamp(1.4rem, 2.5vw, 2rem);
     margin-top: 0;
 }
 
-/* Texto dentro de cards */
+ Texto dentro de cards 
 .card-principal p,
 .card-secundaria p {
     font-size: clamp(1rem, 1.5vw, 1.2rem);
 }
 
-/* Cards secundarias: estilo flex para mejor adaptación */
+ Cards secundarias: estilo flex para mejor adaptación 
 .card-secundaria {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
+*/
 
 /* ------------------------------
    SECCIÓN DECORATIVA
