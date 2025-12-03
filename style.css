@@ -7,9 +7,16 @@ body {
     font-size: 16px;
 }
 
+body h1, body h2 {
+    font-family: "Headland One", serif;
+}
+
+body p {
+    font-family: "Bigshot One", serif;
+}
+
 /* -------------------- ENCABEZADO -------------------- */
 #info-inicial h1 {
-    font-family: "Headland One", serif;
     font-weight: 400;
     font-size: clamp(2.2rem, 5vw, 4rem);
     color: white;
@@ -17,7 +24,6 @@ body {
 }
 
 #info-inicial p {
-    font-family: "Bigshot One", serif;
     color: whitesmoke;
     margin: 0.3rem 0;
     font-size: clamp(1rem, 2vw, 1.5rem);
@@ -92,8 +98,8 @@ main {
 }
 
 .card {
-    background-color: brown;
-    height: 430px;
+    background-color: #8DD3C7;
+    height: 425px;
     overflow: hidden;
     border-radius: 1rem;
     width: clamp(260px, 30%, 360px);
@@ -123,7 +129,7 @@ main {
 /* ---------- INFO-CARD (SECCIÓN ARREGLADA) ---------- */
 
 .info-card {
-    background-color: aquamarine;
+    background-color: #AEE6CE; 
     padding: 1.5rem;
     border-radius: 1.5rem;
 
@@ -136,7 +142,8 @@ main {
     gap: 1.5rem;
 }
 
-.info-card img {
+.info-card #video-info {
+    margin: auto;
     width: 40%;
     min-width: 180px;
     max-width: 280px;
@@ -175,15 +182,50 @@ main {
     margin-top: 1.5rem;
     padding: 1.5rem;
     border-radius: 1rem;
-    background-color: #8954fa;
+    background-color: #FFD3B6;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 
     animation: floatCard 3s ease-in-out infinite alternate;
 }
 
+#gif-musica {
+    width: 10rem;
+    height: auto;
+}
+
+#musicat audio {
+    height: 2rem;
+}
+
+#musicat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cat-audifono img{
+    width: 10rem;
+    height: auto;
+    position: relative;
+}
+
+#cat-audifono {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
 /* -------------------- FOOTER -------------------- */
 
 #final-pag {
-    background-color: rgb(255, 81, 0);
+    background-color: rgb(0, 0, 0);
+    color: white;
     margin-top: 2rem;
     text-align: center;
     padding-top: clamp(1rem, 1.5vw, 2rem);
@@ -199,12 +241,17 @@ main {
 #final-pag a {
     font-size: clamp(1rem, 1.5vw, 1.3rem);
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
     font-weight: bold;
 }
 
 #final-pag a:hover {
     text-decoration: underline;
+}
+
+#gif-caras {
+    width: 10rem;
+    height: auto;
 }
 
 /* -------------------- ANIMACIONES -------------------- */
